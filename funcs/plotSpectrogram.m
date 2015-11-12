@@ -1,6 +1,8 @@
-function [ h ] = plotSpectrogram( s_dB, t, f )
+function [ h ] = plotSpectrogram( y, window, overlap, n, fs )
 %PLOTSPECTOGRAM Quick plot of spectrogram data s_dB over time and frequency
     
+[ s_dB, f, t ] = getSpectrogram( y, window, overlap, n, fs );
+
 % Plot interpolated without mesh
 h = surf(t, f, s_dB);
 shading interp

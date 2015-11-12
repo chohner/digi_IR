@@ -39,12 +39,6 @@ pause;
 %% Play impulse and record response
 [ y, t ] = recordImpulse( 1, rec, jackConfig);
 
-% Calculate spectogram of left channel
-[ s_dB, fSpec, tSpec ] = getSpectrogram( y( :, 1 ) , 512, 128, 1024, fs );
-
-% Calculate FFT of both channels
-[ y_dB, f_fft ] = easyFFT(y, fs);
-
 % Plot
 figure(1)
 clf
@@ -55,8 +49,8 @@ irHandle = plotIR( y, t );
 
 % Plot spectogram
 subplot(3,1,2)
-specHandle = plotSpectrogram( s_dB, tSpec, fSpec );
+specHandle = plotSpectrogram( y( :, 1 ) , 512, 128, 1024, fs );
 
 % Plot FFT
 subplot(3,1,3)
-fftHandle = plotFFT( y_dB, f_fft );
+fftHandle = plotFFT( y, fs );

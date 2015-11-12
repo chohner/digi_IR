@@ -1,5 +1,7 @@
-function [ h ] = plotFFT( y_dB, f )
+function [ h ] = plotFFT( y, fs )
 %PLOTFFT Quickly plot FFT over frequency
+
+[ y_dB, f ] = easyFFT( y, fs );
 
 h = semilogx( f , y_dB);
 grid on
