@@ -55,7 +55,7 @@ irHandle = plotIR( y, t );
 
 % Plot spectogram
 subplot(3,1,2)
-specHandle = plotSpectogram( s_dB, tSpec, fSpec );
+specHandle = plotSpectrogram( s_dB, tSpec, fSpec );
 
 % Plot FFT
 subplot(3,1,3)

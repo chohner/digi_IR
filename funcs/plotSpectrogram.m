@@ -1,4 +1,4 @@
-function [ h ] = plotSpectogram( s_dB, t, f )
+function [ h ] = plotSpectrogram( s_dB, t, f )
 %PLOTSPECTOGRAM Quick plot of spectrogram data s_dB over time and frequency
     
 % Plot interpolated without mesh
@@ -6,7 +6,7 @@ h = surf(t, f, s_dB);
 shading interp
 view(2)
 
-title('Spectogram')
+title('Spectrogram')
 xlabel('Time [s]')
 ylabel('Frequency [Hz]')
 
